@@ -1,10 +1,14 @@
 class Subject:
+    
     def __init__(self, name, difficulty):
         self.name = name
         self.difficulty = difficulty
 
+    
     def display(self):
         print(f"Subject: {self.name}, Difficulty: {self.difficulty}")
+
+
 
 class StudyPlan:
     def __init__(self):
@@ -13,19 +17,24 @@ class StudyPlan:
     def add_subject(self, subject):
         self.subjects.append(subject)
 
+   
     def total_difficulty(self):
         total = 0
         for sub in self.subjects:
             total += sub.difficulty
         return total
 
+  
     def get_subjects(self):
         return self.subjects
+
+
 
 class TimeTableGenerator:
     def __init__(self, study_plan):
         self.study_plan = study_plan
 
+  
     def create_timetable(self, total_hours, days):
         timetable = []
         subjects = self.study_plan.get_subjects()
@@ -78,6 +87,7 @@ def main():
                 for s in subjects:
                     s.display()
 
+       
         elif choice == "3":
             if len(study_plan.get_subjects()) == 0:
                 print("Add subjects first!")
@@ -102,3 +112,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
